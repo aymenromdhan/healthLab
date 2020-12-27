@@ -60,22 +60,16 @@
 	
 	<div class="content">
   	<!-- notification message -->
-  	<?php if (isset($_SESSION['success'])) : ?>
-      <div class="error success" >
-      	<h3>
-          <?php 
-          	echo $_SESSION['success']; 
-          	unset($_SESSION['success']);
-          ?>
-      	</h3>
-      </div>
-  	<?php endif ?>
+  	
 
     <!-- logged in user information -->
-    <?php  if (isset($_SESSION['username']))  : ?>
-    	<p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
+    <!-- <?php  if (isset($_SESSION['username']))  : ?>
+    	
     	<p> <a href="index.php?logout='1'" style="color: red;">logout</a> </p>
-    <?php endif ?>
+
+
+
+    <?php endif ?>-->
 </div>
 	<!-- Start top bar -->
 	<div class="main-top">
@@ -85,6 +79,11 @@
 					<div class="left-top">
 						<a class="new-btn-d br-2" href="#"><span>Book Appointment</span></a>
 						<div class="mail-b"><a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i> demo@gmail.com</a></div>
+
+
+                     
+                    
+
 					</div>
 				</div>
 				<div class="col-lg-6">
@@ -124,6 +123,32 @@
                         <li><a class="nav-link" href="#gallery">Gallery</a></li>
 						<li><a class="nav-link" href="#team">Doctor</a></li>
                         <li><a class="nav-link" href="#blog">Blog</a></li>
+                       <li> <div class="user-area dropdown float-right">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img class="user-avatar rounded-circle" src="images/img-1" alt="User Avatar" width="40" height="40">
+                        </a>
+
+                        <div class="user-menu dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(-88px, 0px, 0px); top: 0px; left: 0px; will-change: transform;">
+                            <a class="nav-link" href="profile.php"><i class="fa fa-user"></i> My Profile</a>
+
+                           <!-- <a class="nav-link" href="#"><i class="fa fa-user"></i> Notifications <span class="count">13</span></a> -->
+
+                           <!-- <a class="nav-link" href="#"><i class="fa fa-cog"></i> Settings</a>-->
+
+                           <?php  if (isset($_SESSION['username']))  : ?>
+    	
+    	<a class="nav-link" href="index.php?logout='1'"><i class="fa fa-power-off"></i> logout</a>
+
+
+
+    <?php endif ?>
+
+                           
+                        </div>
+                   
+                    </li>
+
+                </div>
 						
                     </ul>
                 </div>
@@ -158,7 +183,8 @@
 					<div class="pogoSlider-slide" data-transition="fade" data-duration="1500" style="background-image:url(images/slider-03.jpg);">
 						<div class="lbox-caption pogoSlider-slide-element">
 							<div class="lbox-details">
-								<h1>Welcome to Health Lab</h1>
+								<h1>Welcome <?php echo $_SESSION['username']; ?>
+ to Health Lab</h1>
 								<p>Fusce convallis ante id purus sagittis malesuada. Sed erat ipsum </p>
 								<a href="#" class="btn">Contact Us</a>
 							</div>
@@ -187,7 +213,8 @@
 					<div class="col-lg-12 col-md-12 col-sm-12">
 						<div class="row align-items-center about-main-info">
 							<div class="col-lg-6 col-md-6 col-sm-12">
-								<h2> Welcome to Health Lab </h2>
+								<h2>Welcome <?php echo $_SESSION ['username']; ?>
+ to Health Lab </h2>
 								<p>Fusce convallis ante id purus sagittis malesuada. Sed erat ipsum, suscipit sit amet auctor quis, vehicula ut leo. Maecenas felis nulla, tincidunt ac blandit a, consectetur quis elit. Nulla ut magna eu purus cursus sagittis. Praesent fermentum tincidunt varius. Proin sit amet tempus magna. Fusce pellentesque vulputate urna. </p>
 								<p>Fusce convallis ante id purus sagittis malesuada. Sed erat ipsum, suscipit sit amet auctor quis, vehicula ut leo. Maecenas felis nulla, tincidunt ac blandit a, consectetur quis elit. Nulla ut magna eu purus cursus sagittis. Praesent fermentum tincidunt varius. Proin sit amet tempus magna. Fusce pellentesque vulputate urna. </p>
 								<a href="#" class="new-btn-d br-2">Read More</a>
@@ -681,36 +708,7 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="title-box">
-						<h2>Contact us</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				
-				<div class="col-lg-12 col-xs-12">
-				  <div class="contact-block">
-				  <form method="post" action="login.php">
-  	<?php include('errors.php'); ?>
-  	<div  class="form-group">
-  		<label>Username</label>
-  		<input type="text" name="username" class="form-control-1" >
-  	</div>
-  	<div class="form-group">
-  		<label>Password</label>
-  		<input type="password" name="password" class="form-control-1">
-  	</div>
-  
-	  <div class="form-group">
-			<button type="submit" class="btn" name="login_user">
-					Login
-			</button>
-    	</div>
-  	<p>
-  		Not yet a member? <a href="register.php">Sign up</a>
-  	</p>
-  </form>
-				  </div>
+						
 				</div>
 				
 				
